@@ -1,0 +1,328 @@
+
+
+<center>
+<img src='http://www.azsolo.com/forums/style_images/13_banner.jpg'>
+<p>
+<h2>2015 PAX Calculator<h2>
+<p>
+</center>
+
+<!-- JavaScript functions -->
+<script language = "JavaScript">
+     function classSelect() {
+          var pax1 = document.getElementById("class1").value;
+          var pax2 = document.getElementById("class2").value;
+          var pax3 = document.getElementById("class3").value;
+		  var pax4 = document.getElementById("class4").value;
+          document.calc.pay.value = pax1; 
+          document.calc.pay2.value = pax2; 
+		  document.calc.pay3.value = pax3;		
+          document.calc.pay4.value = pax4;			  
+     }
+</script>
+
+</script>
+<script language = "JavaScript">
+	 function paxTime() {
+          var pax1 = document.getElementById("class1").value;
+		  var rawTime1 = document.getElementById("raw1").value;
+		  var pt1 = pax1 * rawTime1;
+          document.calc.paxtime1.value = pt1;	
+		  var pax2 = document.getElementById("class2").value;
+		  var rawTime2 = document.getElementById("raw2").value;
+		  var pt2 = rawTime2 * pax2;
+          document.calc.paxtime2.value = pt2;		
+		  var pax3 = document.getElementById("class3").value;
+		  var rawTime3 = document.getElementById("raw3").value;
+		  var pt3 = rawTime3 * pax3;
+          document.calc.paxtime3.value = pt3;	    
+		  var pax4 = document.getElementById("class4").value;
+		  var rawTime4 = document.getElementById("raw4").value;
+		  var pt4 = rawTime4 * pax4;
+          document.calc.paxtime4.value = pt4;			  
+     }
+</script>
+
+<script language = "JavaScript">
+	 function Pax2() {
+		  var pax2 = document.getElementById("class2").value;
+		  var rawTime2 = document.getElementById("raw2").value;
+		  var pt2 = rawTime2 * pax2;
+		  var pax1 = document.getElementById("class1").value;
+		  var rawTime1 = document.getElementById("raw1").value;
+		  var pt1 = pax1 * rawTime1;
+		  var tPax2 = (pt1/pt2 * 1000);
+          document.calc.pax2.value = tPax2;		
+		  var pax3 = document.getElementById("class3").value;
+		  var rawTime3 = document.getElementById("raw3").value;
+		  var pt3 = rawTime3 * pax3; 
+		  var tPax3 = (pt1/pt3 * 1000);		  
+          document.calc.pax3.value = tPax3;	
+		  var pax4 = document.getElementById("class4").value;
+		  var rawTime4 = document.getElementById("raw4").value;
+		  var pt4 = rawTime4 * pax4; 
+		  var tPax4 = (pt1/pt4 * 1000);		  
+          document.calc.pax4.value = tPax4;	
+		  }
+</script>
+
+<!-- PAX Input and Output Tables -->
+<center>
+<form name=calc method=POST>
+<table>
+ <tr>
+    <th>Class</th>
+    <th>Raw Time</th> 
+    <th>PAX Factor</th>
+	<th>PAX Time</th>
+	<th>PAX</th>
+  </tr>
+<tr>
+<td>
+<select id ="class1">
+  	<option name="AS" value="0.829">AS</option>
+	<option name="BS" value="0.826">BS</option>
+	<option name="CS" value="0.814">CS</option>
+	<option name="DS" value="0.812">DS</option>
+	<option name="ES" value="0.808">ES</option>
+	<option name="FS" value="0.810">FS</option>
+	<option name="GS" value="0.806">GS</option>
+	<option name="HS" value="0.796">HS</option>
+	<option name="STF" value="0.801">STF</option>
+	<option name="STR" value="0.838">STR</option>
+	<option name="STS" value="0.828">STS</option>
+	<option name="STX" value="0.831">STX</option>
+	<option name="STU" value="0.844">STU</option>
+	<option name="CAM-C" value="0.830">CAM-C</option>
+	<option name="CAM-S" value="0.836">CAM-S</option>
+	<option name="CAM-T" value="0.825">CAM-T</option>
+	<option name="SM" value="0.867">SM</option>
+	<option name="SMF" value="0.852">SMF</option>
+	<option name="SSM" value="0.882">SSM</option>
+	<option name="SSP" value="0.871">SSP</option>
+	<option name="ASP" value="0.865">ASP</option>
+	<option name="BSP" value="0.863">BSP</option>
+	<option name="CSP" value="0.861">CSP</option>
+	<option name="DSP" value="0.854">DSP</option>
+	<option name="ESP" value="0.849">ESP</option>
+	<option name="FSP" value="0.840">FSP</option>
+	<option name="XP" value="0.905">XP</option>
+	<option name="BP" value="0.881">BP</option>
+	<option name="CP" value="0.864">CP</option>
+	<option name="DP" value="0.879">DP</option>
+	<option name="EP" value="0.874">EP</option>
+	<option name="FP" value="0.880">FP</option>
+	<option name="AM" value="1">AM</option>
+	<option name="BM" value="0.964">BM</option>
+	<option name="CM" value="0.919">CM</option>
+	<option name="DM" value="0.918">DM</option>
+	<option name="EM" value="0.922">EM</option>
+	<option name="FM" value="0.926">FM</option>
+	<option name="FSAE" value="0.984">FSAE</option>
+	<option name="KM" value="0.955">KM</option>
+	<option name="JA" value="0.878">JA</option>
+	<option name="JB" value="0.842">JB</option>
+	<option name="JC" value="0.734">JC</option>
+</select>
+</td>
+<td>
+<input type="text" id="raw1" name="raw1" value="999.000" min="1" max="999" size="8">
+</td>
+<td> <input type=text name=pay size=8 STYLE="background-color: #72A4D2;"></td>
+<td>
+<input type="text" id="paxtime1" name="paxtime1" size="8">
+</td>
+<td>
+<input type="text" id="pax1" name="pax1" value="1000" size="4">
+</td>
+</tr>
+<tr>
+<td>
+<select id ="class2">
+  	<option name="AS" value="0.829">AS</option>
+	<option name="BS" value="0.826">BS</option>
+	<option name="CS" value="0.814">CS</option>
+	<option name="DS" value="0.812">DS</option>
+	<option name="ES" value="0.808">ES</option>
+	<option name="FS" value="0.810">FS</option>
+	<option name="GS" value="0.806">GS</option>
+	<option name="HS" value="0.796">HS</option>
+	<option name="STF" value="0.801">STF</option>
+	<option name="STR" value="0.838">STR</option>
+	<option name="STS" value="0.828">STS</option>
+	<option name="STX" value="0.831">STX</option>
+	<option name="STU" value="0.844">STU</option>
+	<option name="CAM-C" value="0.830">CAM-C</option>
+	<option name="CAM-S" value="0.836">CAM-S</option>
+	<option name="CAM-T" value="0.825">CAM-T</option>
+	<option name="SM" value="0.867">SM</option>
+	<option name="SMF" value="0.852">SMF</option>
+	<option name="SSM" value="0.882">SSM</option>
+	<option name="SSP" value="0.871">SSP</option>
+	<option name="ASP" value="0.865">ASP</option>
+	<option name="BSP" value="0.863">BSP</option>
+	<option name="CSP" value="0.861">CSP</option>
+	<option name="DSP" value="0.854">DSP</option>
+	<option name="ESP" value="0.849">ESP</option>
+	<option name="FSP" value="0.840">FSP</option>
+	<option name="XP" value="0.905">XP</option>
+	<option name="BP" value="0.881">BP</option>
+	<option name="CP" value="0.864">CP</option>
+	<option name="DP" value="0.879">DP</option>
+	<option name="EP" value="0.874">EP</option>
+	<option name="FP" value="0.880">FP</option>
+	<option name="AM" value="1">AM</option>
+	<option name="BM" value="0.964">BM</option>
+	<option name="CM" value="0.919">CM</option>
+	<option name="DM" value="0.918">DM</option>
+	<option name="EM" value="0.922">EM</option>
+	<option name="FM" value="0.926">FM</option>
+	<option name="FSAE" value="0.984">FSAE</option>
+	<option name="KM" value="0.955">KM</option>
+	<option name="JA" value="0.878">JA</option>
+	<option name="JB" value="0.842">JB</option>
+	<option name="JC" value="0.734">JC</option>
+</select>
+</td>
+<td>
+<input type="text" id="raw2" name="raw2" size="8" value="999.000" size="8">
+</td>
+<td> <input type=text name=pay2 size=8 STYLE="background-color: #72A4D2;"></td>
+<td>
+<input type="text" name="paxtime2" size="8">
+</td>
+<td>
+<input type="text" id="pax2" name="pax2" size="4">
+</td>
+</tr>
+
+<tr>
+<td>
+<select id ="class3">
+  	<option name="AS" value="0.829">AS</option>
+	<option name="BS" value="0.826">BS</option>
+	<option name="CS" value="0.814">CS</option>
+	<option name="DS" value="0.812">DS</option>
+	<option name="ES" value="0.808">ES</option>
+	<option name="FS" value="0.810">FS</option>
+	<option name="GS" value="0.806">GS</option>
+	<option name="HS" value="0.796">HS</option>
+	<option name="STF" value="0.801">STF</option>
+	<option name="STR" value="0.838">STR</option>
+	<option name="STS" value="0.828">STS</option>
+	<option name="STX" value="0.831">STX</option>
+	<option name="STU" value="0.844">STU</option>
+	<option name="CAM-C" value="0.830">CAM-C</option>
+	<option name="CAM-S" value="0.836">CAM-S</option>
+	<option name="CAM-T" value="0.825">CAM-T</option>
+	<option name="SM" value="0.867">SM</option>
+	<option name="SMF" value="0.852">SMF</option>
+	<option name="SSM" value="0.882">SSM</option>
+	<option name="SSP" value="0.871">SSP</option>
+	<option name="ASP" value="0.865">ASP</option>
+	<option name="BSP" value="0.863">BSP</option>
+	<option name="CSP" value="0.861">CSP</option>
+	<option name="DSP" value="0.854">DSP</option>
+	<option name="ESP" value="0.849">ESP</option>
+	<option name="FSP" value="0.840">FSP</option>
+	<option name="XP" value="0.905">XP</option>
+	<option name="BP" value="0.881">BP</option>
+	<option name="CP" value="0.864">CP</option>
+	<option name="DP" value="0.879">DP</option>
+	<option name="EP" value="0.874">EP</option>
+	<option name="FP" value="0.880">FP</option>
+	<option name="AM" value="1">AM</option>
+	<option name="BM" value="0.964">BM</option>
+	<option name="CM" value="0.919">CM</option>
+	<option name="DM" value="0.918">DM</option>
+	<option name="EM" value="0.922">EM</option>
+	<option name="FM" value="0.926">FM</option>
+	<option name="FSAE" value="0.984">FSAE</option>
+	<option name="KM" value="0.955">KM</option>
+	<option name="JA" value="0.878">JA</option>
+	<option name="JB" value="0.842">JB</option>
+	<option name="JC" value="0.734">JC</option>
+</select>
+</td>
+<td>
+<input type="text" id="raw3" name="raw3" size="8" value="999.000" size="8">
+</td>
+<td> <input type=text name=pay3 size=8 STYLE="background-color: #72A4D2;"></td>
+<td>
+<input type="text" name="paxtime3" size="8">
+</td>
+<td>
+<input type="text" id="pax3" name="pax3" size="4">
+</td>
+</tr>
+
+<tr>
+<td>
+<select id ="class4">
+  	<option name="AS" value="0.829">AS</option>
+	<option name="BS" value="0.826">BS</option>
+	<option name="CS" value="0.814">CS</option>
+	<option name="DS" value="0.812">DS</option>
+	<option name="ES" value="0.808">ES</option>
+	<option name="FS" value="0.810">FS</option>
+	<option name="GS" value="0.806">GS</option>
+	<option name="HS" value="0.796">HS</option>
+	<option name="STF" value="0.801">STF</option>
+	<option name="STR" value="0.838">STR</option>
+	<option name="STS" value="0.828">STS</option>
+	<option name="STX" value="0.831">STX</option>
+	<option name="STU" value="0.844">STU</option>
+	<option name="CAM-C" value="0.830">CAM-C</option>
+	<option name="CAM-S" value="0.836">CAM-S</option>
+	<option name="CAM-T" value="0.825">CAM-T</option>
+	<option name="SM" value="0.867">SM</option>
+	<option name="SMF" value="0.852">SMF</option>
+	<option name="SSM" value="0.882">SSM</option>
+	<option name="SSP" value="0.871">SSP</option>
+	<option name="ASP" value="0.865">ASP</option>
+	<option name="BSP" value="0.863">BSP</option>
+	<option name="CSP" value="0.861">CSP</option>
+	<option name="DSP" value="0.854">DSP</option>
+	<option name="ESP" value="0.849">ESP</option>
+	<option name="FSP" value="0.840">FSP</option>
+	<option name="XP" value="0.905">XP</option>
+	<option name="BP" value="0.881">BP</option>
+	<option name="CP" value="0.864">CP</option>
+	<option name="DP" value="0.879">DP</option>
+	<option name="EP" value="0.874">EP</option>
+	<option name="FP" value="0.880">FP</option>
+	<option name="AM" value="1">AM</option>
+	<option name="BM" value="0.964">BM</option>
+	<option name="CM" value="0.919">CM</option>
+	<option name="DM" value="0.918">DM</option>
+	<option name="EM" value="0.922">EM</option>
+	<option name="FM" value="0.926">FM</option>
+	<option name="FSAE" value="0.984">FSAE</option>
+	<option name="KM" value="0.955">KM</option>
+	<option name="JA" value="0.878">JA</option>
+	<option name="JB" value="0.842">JB</option>
+	<option name="JC" value="0.734">JC</option>
+</select>
+</td>
+<td>
+<input type="text" id="raw4" name="raw4" size="8" value="999.000" size="8">
+</td>
+<td> <input type=text name=pay4 size=8 STYLE="background-color: #72A4D2;"></td>
+<td>
+<input type="text" name="paxtime4" size="8">
+</td>
+<td>
+<input type="text" id="pax4" name="pax4" size="4">
+</td>
+</tr>
+</table>
+<p>
+
+
+<input type=button value="Calculate PAX" onClick="classSelect();paxTime();Pax2()">
+
+</form>
+<p>
+Top PAX is based on the first car in the list
+<p align="center"><font face="arial" size="-2">Developed By</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://javascriptkit.com">Hollywood</a></font></p>
